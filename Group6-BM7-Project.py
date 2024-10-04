@@ -17,7 +17,7 @@ st.markdown('by Group 6 BM7')
 st.header('------------------------------------------------------------')
 
 
-df = pd.read_csv("laptop_price - dataset.csv")
+df = pd.read_csv("laptop_price-dataset.csv")
 
 df
 
@@ -27,27 +27,24 @@ df.info
 st.header('------------------------------------------------------------')
 st.header('Bar Chart of Most Common CPU Types Used by Apple')
 
-categories = ['A', 'B', 'C', 'D']
+import pandas as pd
+import matplotlib.pyplot as plt
 
-# Generates an array named "values" containing four random integers
-# between 10(inclusive) and 100(exclusive)
-values = np.random.randint(10, 100, size=4)
+# Load the dataset
+file_path = 'laptop_price-dataset.csv'  # Replace with your file path in Google Colab
+laptop_data = pd.read_csv("laptop_price-dataset.csv")
 
-def bar_chart():
-  colors = ['skyblue', 'lightgreen', 'salmon', 'orange']  # you can define colors using a list
-
-  # defines the cateogries, values, and the color for our chart
-  plt.bar(categories, values, color=colors)
-  # this displays a Title for our chart
-  plt.title('Bar Chart Example')
-  # this defines the label for the y axis of our chart
-  plt.ylabel('Value')
-  # this defines the label for the x axis of our chart
-  plt.xlabel('Categories')
-  # this shows the graph
-  st.pyplot(plt)
-  # Clears the current figure
-  plt.clf()
+# Create a bar chart for the distribution of laptop types (TypeName)
+plt.figure(figsize=(10,6))
+laptop_data['TypeName'].value_counts().plot(kind='bar', color='orange', edgecolor='black')
+plt.title('Bar Chart of Distribution of Laptop Types')
+plt.xlabel('Laptop Type')
+plt.ylabel('Count')
+plt.xticks(rotation=45)
+plt.grid(True)
+st.pyplot(plt)
+# Clears the current figure
+plt.clf()
 
 
 
