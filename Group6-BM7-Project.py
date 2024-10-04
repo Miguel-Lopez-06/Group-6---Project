@@ -51,4 +51,20 @@ st.pyplot(plt)
 # Clears the current figure
 plt.clf()
 
-st.write('This Bar Chart shows the types of CPU that Apple used in their laptops. Based on the data that was given, The most frequent types of CPU are Intel's Core i5 and Core i7.Observations: Intel Core i5: Because of the balance between the performance and efficiency of this CPU, it is the most used CPU of Apple in their MacBooks. Intel Core i7: This CPU appears more on the higher-end models of Macbook like the Macbook Pro.')
+st.header('Violin Plot of Weight Distribution of Laptops')
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# 3. Violin Plot for Weight Distribution of Laptops
+plt.figure(figsize=(10, 6))  # Set the size of the plot
+
+# Assuming your DataFrame is named 'df'
+sns.violinplot(data=df, x='Weight (kg)', color='pink')  # Create a violin plot for laptop weights
+
+plt.title('Violin Plot of Weight Distribution of Laptops')  # Set the title of the plot
+plt.xlabel('Weight (kg)')  # Label the x-axis
+plt.tight_layout()  # Adjust layout for better visualization
+st.pyplot(plt)
+# Clears the current figure
+plt.clf()
