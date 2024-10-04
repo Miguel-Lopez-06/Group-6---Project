@@ -12,4 +12,4 @@ import plotly.graph_objects as go
 from io import StringIO
 
 st.title('Data Visualization Using Streamlit')
-st.markdown('`by JC Diamante`')
+st.markdown('by Group 6 BM7')
