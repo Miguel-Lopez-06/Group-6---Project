@@ -1,3 +1,4 @@
+import matplotlib
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
@@ -26,7 +27,11 @@ df.info
 st.header('------------------------------------------------------------')
 st.header('Bar Chart of Most Common CPU Types Used by Apple')
 
+
 import matplotlib.pyplot as plt
+matplotlib.use('TkAgg')
+file_path = 'laptop_price-dataset.csv'  # Replace with your file path in Google Colab
+laptop_data = pd.read_csv("laptop_price - dataset.csv")
 
 # Assuming your data is in a pandas DataFrame named 'df'
 # If your DataFrame has a different name, replace 'df' with the actual name
@@ -41,4 +46,4 @@ plt.xlabel('CPU Type')
 plt.ylabel('Count')
 plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
-plt.show()
+plt.savefig()
