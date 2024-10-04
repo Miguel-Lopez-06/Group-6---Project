@@ -13,7 +13,7 @@ import plotly.graph_objects as go
 from io import StringIO
 
 st.title('Data Visualization Using Streamlit')
-st.markdown('by Group 6 BM7')
+st.markdown('`Group 6 BM7`')
 st.header('------------------------------------------------------------')
 
 
