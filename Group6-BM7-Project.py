@@ -27,6 +27,12 @@ df.info
 st.header('------------------------------------------------------------')
 st.header('Bar Chart of Most Common CPU Types Used by Apple')
 
+categories = ['A', 'B', 'C', 'D']
+
+# Generates an array named "values" containing four random integers
+# between 10(inclusive) and 100(exclusive)
+values = np.random.randint(10, 100, size=4)
+
 def bar_chart():
   colors = ['skyblue', 'lightgreen', 'salmon', 'orange']  # you can define colors using a list
 
