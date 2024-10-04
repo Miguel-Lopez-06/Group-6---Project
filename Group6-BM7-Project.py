@@ -24,4 +24,21 @@ st.header('------------------------------------------------------------')
 df.info
 
 st.header('------------------------------------------------------------')
-df.describe()
+st.header('Bar Chart of Most Common CPU Types Used by Apple')
+
+import matplotlib.pyplot as plt
+
+# Assuming your data is in a pandas DataFrame named 'df'
+# If your DataFrame has a different name, replace 'df' with the actual name
+apple_laptops = df[df['Company'] == 'Apple']
+apple_cpu_count = apple_laptops['CPU_Type'].value_counts()
+
+# Plot
+plt.figure(figsize=(10, 6))
+apple_cpu_count.plot(kind='bar', color='skyblue')
+plt.title('Bar Chart of Most Common CPU Types Used by Apple')
+plt.xlabel('CPU Type')
+plt.ylabel('Count')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
