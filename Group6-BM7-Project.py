@@ -76,3 +76,29 @@ st.pyplot(plt)
 plt.clf()
 
 st.write('The weight distribution of laptops is displayed in this violin plot, emphasizing the areas where the bulk of computers fall within a particular weight range.')
+st.write('**Observation:**The majority of computers weigh between 1.0 and 2.5 kg, with bulkier models weighing between 1.8 kg and 1.3–1.5 kg at their highest points. Ultra-heavy laptops are rare, as only a small percentage of computers weigh more than 2.5 kg.')
+st.header('------------------------------------------------------------')
+
+#Graph3
+st.header('Bubble Chart: RAM vs CPU Frequency vs Price')
+
+import matplotlib.pyplot as plt
+
+# Bubble Chart: RAM vs CPU Frequency vs Price
+plt.figure(figsize=(10, 6))
+plt.scatter(df['CPU_Frequency (GHz)'], df['RAM (GB)'],
+            s=df['Price (Euro)']/10, alpha=0.6,
+            c=df['Price (Euro)'], cmap='coolwarm', marker='o')
+
+plt.title('Bubble Chart: RAM vs CPU Frequency vs Price', fontsize=14)
+plt.xlabel('CPU Frequency (GHz)', fontsize=12)
+plt.ylabel('RAM (GB)', fontsize=12)
+plt.colorbar(label='Price (Euro)')
+plt.grid(True)
+st.pyplot(plt)
+# Clears the current figure
+plt.clf()
+
+st.write('This bubble chart reveals a clear correlation between price and performance (RAM and CPU frequency) can be seen in this bubble chart. Since premium components are more expensive, high-end laptops are priced much higher, while budget versions with lower performance are less expensive.')
+st.write('**Observation:**Generally speaking, laptops with CPU frequencies higher than 3 GHz and more RAM than 16 GB cost more. These are probably meant for customers who need a lot of processing power, such developers, gamers, or people who work on graphics-intensive projects.')
+st.header('------------------------------------------------------------')
