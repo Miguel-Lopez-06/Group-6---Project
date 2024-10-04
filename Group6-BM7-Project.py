@@ -53,7 +53,7 @@ st.pyplot(plt)
 plt.clf()
 
 st.write('This Bar Chart shows the types of CPU that Apple used in their laptops.')
-
+st.header('------------------------------------------------------------')
 
 #Graph2
 st.header('Violin Plot of Weight Distribution of Laptops')
