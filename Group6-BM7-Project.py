@@ -53,7 +53,7 @@ st.pyplot(plt)
 plt.clf()
 
 st.write('This Bar Chart shows the types of CPU that Apple used in their laptops.')
-st.write('**Observations**: Intel Core i5: Because of the balance between the performance and efficiency of this CPU, it is the most used CPU of Apple in their MacBooks. Intel Core i7: This CPU appears more on the higher-end models of Macbook like the Macbook Pro.')
+st.write('**Observation**: Intel Core i5: Because of the balance between the performance and efficiency of this CPU, it is the most used CPU of Apple in their MacBooks. Intel Core i7: This CPU appears more on the higher-end models of Macbook like the Macbook Pro.')
 st.header('------------------------------------------------------------')
 
 #Graph2
@@ -101,4 +101,24 @@ plt.clf()
 
 st.write('This bubble chart reveals a clear correlation between price and performance (RAM and CPU frequency) can be seen in this bubble chart. Since premium components are more expensive, high-end laptops are priced much higher, while budget versions with lower performance are less expensive.')
 st.write('**Observation:** Generally speaking, laptops with CPU frequencies higher than 3 GHz and more RAM than 16 GB cost more. These are probably meant for customers who need a lot of processing power, such developers, gamers, or people who work on graphics-intensive projects.')
+st.header('------------------------------------------------------------')
+
+#Graph4
+st.header('Area Chart: Average Laptop Price by Company')
+
+# Area Chart: Distribution of Prices across Companies
+df_grouped = df.groupby('Company')['Price (Euro)'].mean().sort_values(ascending=False)
+
+plt.figure(figsize=(10, 6))
+df_grouped.plot(kind='area', color='skyblue', alpha=0.6)
+plt.title('Area Chart: Average Laptop Price by Company', fontsize=14)
+plt.xlabel('Company', fontsize=12)
+plt.ylabel('Average Price (Euro)', fontsize=12)
+plt.grid(True)
+st.pyplot(plt)
+# Clears the current figure
+plt.clf()
+
+st.write('')
+st.write('**Observation:**')
 st.header('------------------------------------------------------------')
