@@ -22,3 +22,19 @@ df
 
 st.header('------------------------------------------------------------')
 df.info
+
+st.header('------------------------------------------------------------')
+df.isna().sum()
+
+st.header('------------------------------------------------------------')
+df.describe()
+st.write('**count**: Number of non-null or non-missing values in a column.')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
