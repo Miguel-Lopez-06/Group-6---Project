@@ -51,5 +51,4 @@ st.pyplot(plt)
 # Clears the current figure
 plt.clf()
 
-
-
+st.write('This Bar Chart shows the types of CPU that Apple used in their laptops. Based on the data that was given, The most frequent types of CPU are Intel's Core i5 and Core i7.Observations: Intel Core i5: Because of the balance between the performance and efficiency of this CPU, it is the most used CPU of Apple in their MacBooks. Intel Core i7: This CPU appears more on the higher-end models of Macbook like the Macbook Pro.')
