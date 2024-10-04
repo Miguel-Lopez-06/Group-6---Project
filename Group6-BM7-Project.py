@@ -25,6 +25,7 @@ st.header('------------------------------------------------------------')
 df.info
 
 st.header('------------------------------------------------------------')
+#1
 st.header('Bar Chart of Most Common CPU Types Used by Apple')
 
 import pandas as pd
@@ -51,6 +52,8 @@ st.pyplot(plt)
 # Clears the current figure
 plt.clf()
 
+
+#2
 st.header('Violin Plot of Weight Distribution of Laptops')
 
 import seaborn as sns
@@ -68,3 +71,5 @@ plt.tight_layout()  # Adjust layout for better visualization
 st.pyplot(plt)
 # Clears the current figure
 plt.clf()
+
+st.write('This Bar Chart shows the types of CPU that Apple used in their laptops.')
