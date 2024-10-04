@@ -10,3 +10,17 @@ import squirify
 import networkx as nx
 import plotly.graph_objects as go
 from io import StringIO
+
+
+st.header('------------------------------------------------------------')
+df.describe()
+st.write('**count**: Number of non-null or non-missing values in a column.')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
