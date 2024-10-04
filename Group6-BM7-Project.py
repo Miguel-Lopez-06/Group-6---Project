@@ -31,8 +31,8 @@ st.header('Bar Chart of Most Common CPU Types Used by Apple')
 import pandas as pd
 import matplotlib.pyplot as plt
 # Load the dataset
-file_path = 'laptop_price-dataset.csv'  # Ensure this is the correct file path
-laptop_data = pd.read_csv('laptop_price-dataset.csv')
+file_path = 'laptop_price - dataset.csv'  # Ensure this is the correct file path
+laptop_data = pd.read_csv('laptop_price - dataset.csv')
 
 # Scatter plot: RAM vs Price
 plt.figure(figsize=(10,6))
