@@ -27,38 +27,21 @@ df.info
 st.header('------------------------------------------------------------')
 st.header('Bar Chart of Most Common CPU Types Used by Apple')
 
+def bar_chart():
+  colors = ['skyblue', 'lightgreen', 'salmon', 'orange']  # you can define colors using a list
 
-import matplotlib
-matplotlib.use('TkAgg')  # Use an interactive backend
-
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-import numpy as np
-import pandas as pd
-
-# Enable interactive mode
-plt.ion()
-
-# Assuming df is your DataFrame and is already loaded
-# For example: df = pd.read_csv('your_dataset.csv')
-
-# 3D Surface Plot: Screen Size, Weight, and Price
-fig = plt.figure(figsize=(10, 11))
-ax = fig.add_subplot(111, projection='3d')
-
-# Sample data from your dataframe (df) assuming df is defined
-X = df['Inches']
-Y = df['Weight (kg)']
-Z = df['Price (Euro)']
-ax.plot_trisurf(X, Y, Z, cmap='viridis', edgecolor='none')
-
-# Set titles and labels
-ax.set_title('3D Surface Plot: Screen Size, Weight, and Price', fontsize=14)
-ax.set_xlabel('Screen Size (Inches)', fontsize=10)
-ax.set_ylabel('Weight (kg)', fontsize=10)
-ax.set_zlabel('Price (Euro)', fontsize=10)
-
-plt.show(block=True)  # Ensure it blocks and shows in the main thread
+  # defines the cateogries, values, and the color for our chart
+  plt.bar(categories, values, color=colors)
+  # this displays a Title for our chart
+  plt.title('Bar Chart Example')
+  # this defines the label for the y axis of our chart
+  plt.ylabel('Value')
+  # this defines the label for the x axis of our chart
+  plt.xlabel('Categories')
+  # this shows the graph
+  st.pyplot(plt)
+  # Clears the current figure
+  plt.clf()
 
 
 
