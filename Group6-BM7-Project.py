@@ -120,5 +120,5 @@ st.pyplot(plt)
 plt.clf()
 
 st.write('')
-st.write('**Observation:**')
+st.write('**Observation:** ')
 st.header('------------------------------------------------------------')
