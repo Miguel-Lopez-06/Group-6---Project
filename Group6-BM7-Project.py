@@ -53,7 +53,7 @@ st.pyplot(plt)
 plt.clf()
 
 st.write('This Bar Chart shows the types of CPU that Apple used in their laptops.')
-st.write('Observations: Intel Core i5: Because of the balance between the performance and efficiency of this CPU, it is the most used CPU of Apple in their MacBooks. Intel Core i7: This CPU appears more on the higher-end models of Macbook like the Macbook Pro.')
+st.write('**Observations**: Intel Core i5: Because of the balance between the performance and efficiency of this CPU, it is the most used CPU of Apple in their MacBooks. Intel Core i7: This CPU appears more on the higher-end models of Macbook like the Macbook Pro.')
 st.header('------------------------------------------------------------')
 
 #Graph2
