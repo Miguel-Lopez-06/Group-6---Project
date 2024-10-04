@@ -29,12 +29,15 @@ st.header('Bar Chart of Most Common CPU Types Used by Apple')
 
 
 import matplotlib
-matplotlib.use('TkAgg')  # Change backend for interactive plotting
+matplotlib.use('TkAgg')  # Use an interactive backend
 
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import pandas as pd
+
+# Enable interactive mode
+plt.ion()
 
 # Assuming df is your DataFrame and is already loaded
 # For example: df = pd.read_csv('your_dataset.csv')
@@ -55,6 +58,7 @@ ax.set_xlabel('Screen Size (Inches)', fontsize=10)
 ax.set_ylabel('Weight (kg)', fontsize=10)
 ax.set_zlabel('Price (Euro)', fontsize=10)
 
-plt.show()
+plt.show(block=True)  # Ensure it blocks and shows in the main thread
+
 
 
