@@ -34,14 +34,19 @@ import matplotlib.pyplot as plt
 file_path = 'laptop_price-dataset.csv'  # Replace with your file path in Google Colab
 laptop_data = pd.read_csv("laptop_price-dataset.csv")
 
-# Create a bar chart for the distribution of laptop types (TypeName)
-plt.figure(figsize=(10,6))
-laptop_data['TypeName'].value_counts().plot(kind='bar', color='orange', edgecolor='black')
-plt.title('Bar Chart of Distribution of Laptop Types')
-plt.xlabel('Laptop Type')
+# Assuming your data is in a pandas DataFrame named 'df'
+# If your DataFrame has a different name, replace 'df' with the actual name
+apple_laptops = df[df['Company'] == 'Apple']
+apple_cpu_count = apple_laptops['CPU_Type'].value_counts()
+
+# Plot
+plt.figure(figsize=(10, 6))
+apple_cpu_count.plot(kind='bar', color='skyblue')
+plt.title('Bar Chart of Most Common CPU Types Used by Apple')
+plt.xlabel('CPU Type')
 plt.ylabel('Count')
-plt.xticks(rotation=45)
-plt.grid(True)
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
 st.pyplot(plt)
 # Clears the current figure
 plt.clf()
