@@ -28,9 +28,14 @@ st.header('------------------------------------------------------------')
 st.header('Bar Chart of Most Common CPU Types Used by Apple')
 
 
+import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
-import matplotlib.pyplot as plt
+import pandas as pd
+
+# Assuming df is your DataFrame and is already loaded
+# For example: df = pd.read_csv('your_dataset.csv')
+
 # 3D Surface Plot: Screen Size, Weight, and Price
 fig = plt.figure(figsize=(10, 11))
 ax = fig.add_subplot(111, projection='3d')
@@ -46,3 +51,6 @@ ax.set_title('3D Surface Plot: Screen Size, Weight, and Price', fontsize=14)
 ax.set_xlabel('Screen Size (Inches)', fontsize=10)
 ax.set_ylabel('Weight (kg)', fontsize=10)
 ax.set_zlabel('Price (Euro)', fontsize=10)
+
+plt.show()
+
