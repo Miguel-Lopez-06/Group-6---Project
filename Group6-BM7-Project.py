@@ -28,19 +28,20 @@ st.header('------------------------------------------------------------')
 st.header('Bar Chart of Most Common CPU Types Used by Apple')
 
 
-import pandas as pd
-import matplotlib.pyplot as plt
-# Load the dataset
-file_path = 'laptop_price - dataset.csv'  # Ensure this is the correct file path
-laptop_data = pd.read_csv('laptop_price - dataset.csv')
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
 
-# Scatter plot: RAM vs Price
-plt.figure(figsize=(10,6))
-plt.scatter(laptop_data['RAM (GB)'], laptop_data['Price (Euro)'], color='green', alpha=0.6)
-plt.title('Scatter Plot of RAM vs Price')
-plt.xlabel('RAM (GB)')
-plt.ylabel('Price (Euro)')
-plt.grid(True)
+# 3D Surface Plot: Screen Size, Weight, and Price
+fig = plt.figure(figsize=(10, 11))
+ax = fig.add_subplot(111, projection='3d')
 
-# Show the plot
+X = df['Inches']
+Y = df['Weight (kg)']
+Z = df['Price (Euro)']
+ax.plot_trisurf(X, Y, Z, cmap='viridis', edgecolor='none')
+
+ax.set_title('3D Surface Plot: Screen Size, Weight, and Price', fontsize=14)
+ax.set_xlabel('Screen Size (Inches)', fontsize=10)
+ax.set_ylabel('Weight (kg)', fontsize=10)
+ax.set_zlabel('Price (Euro)', fontsize=10)
 plt.show()
