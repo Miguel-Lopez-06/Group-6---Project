@@ -28,6 +28,9 @@ st.header('------------------------------------------------------------')
 st.header('Bar Chart of Most Common CPU Types Used by Apple')
 
 
+import matplotlib
+matplotlib.use('TkAgg')  # Change backend for interactive plotting
+
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
@@ -53,4 +56,5 @@ ax.set_ylabel('Weight (kg)', fontsize=10)
 ax.set_zlabel('Price (Euro)', fontsize=10)
 
 plt.show()
+
 
