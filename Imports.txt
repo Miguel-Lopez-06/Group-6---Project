@@ -24,3 +24,7 @@ st.write('')
 st.write('')
 st.write('')
 st.write('')
+
+# Load the dataset
+file_path = 'laptop_price-dataset.csv'  # Replace with your file path in Google Colab
+laptop_data = pd.read_csv("laptop_price-dataset.csv")
