@@ -13,7 +13,7 @@ from io import StringIO
 
 st.title('Data Visualization Using Streamlit')
 st.markdown('by Group 6 BM7')
-st.header('----------------------------------------------------------')
+st.header('-------------------------------------------------------------')
 
 
 df = pd.read_csv("laptop_price - dataset.csv")
