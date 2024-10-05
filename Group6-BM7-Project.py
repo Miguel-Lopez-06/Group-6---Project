@@ -205,10 +205,7 @@ st.header('Line Chart of Average Laptop Price by Operating System')
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-
-# Load the CSV file
-file_path = '/mnt/data/laptop_price-dataset.csv'
-df = pd.read_csv('laptop_price-dataset.csv')
+import streamlit as st
 
 # Convert Price (Euro) to numeric if necessary
 df['Price (Euro)'] = pd.to_numeric(df['Price (Euro)'], errors='coerce')
@@ -216,25 +213,22 @@ df['Price (Euro)'] = pd.to_numeric(df['Price (Euro)'], errors='coerce')
 # Drop rows with missing prices or operating system information
 df = df.dropna(subset=['Price (Euro)', 'OpSys'])
 
-# Line chart: Average laptop price by operating system
-def generate_line_chart_by_os(df):
-    avg_price_per_os = df.groupby('OpSys')['Price (Euro)'].mean().reset_index()
+# Group the data by operating system and calculate the average price
+avg_price_per_os = df.groupby('OpSys')['Price (Euro)'].mean().sort_values(ascending=False)
 
-    # Sort by price for better visualization
-    avg_price_per_os = avg_price_per_os.sort_values(by='Price (Euro)')
+# Plot the Area Chart for Average Laptop Price by Operating System
+plt.figure(figsize=(10, 6))
+avg_price_per_os.plot(kind='area', color='skyblue', alpha=0.6)
+plt.title('Area Chart: Average Laptop Price by Operating System', fontsize=14)
+plt.xlabel('Operating System', fontsize=12)
+plt.ylabel('Average Price (Euro)', fontsize=12)
+plt.grid(True)
 
-    plt.figure(figsize=(10, 6))
-    sns.lineplot(x='OpSys', y='Price (Euro)', data=avg_price_per_os, marker='o', color='green')
-    plt.title('Line Chart of Average Laptop Price by Operating System')
-    plt.xlabel('Operating System')
-    plt.ylabel('Average Price (Euro)')
-    plt.grid(True)
-    plt.xticks(rotation=45)
-    
-    plt.show()  # Display the chart
-    plt.clf()  # Clear the current figure for the next plot
+# Display the plot using Streamlit
+st.pyplot(plt)
 
-generate_line_chart_by_os(df)
+# Clears the current figure
+plt.clf()
 
 
 st.write('This line chart compares the average price of laptops running different operating systems.')
