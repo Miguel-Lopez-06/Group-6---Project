@@ -230,8 +230,9 @@ def generate_line_chart_by_os(df):
     plt.ylabel('Average Price (Euro)')
     plt.grid(True)
     plt.xticks(rotation=45)
-    generate_line_chart_by_os(df)
+    
 st.pyplot(plt)
+generate_line_chart_by_os(df)
 # Clears the current figure
 plt.clf()
 
