@@ -4,6 +4,7 @@ numpy
 pandas 
 seaborn 
 altair 
+squarify
 wordcloud
 networkx
 plotly
