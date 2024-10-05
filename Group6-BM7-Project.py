@@ -276,22 +276,29 @@ st.header('------------------------------------------------------------')
 #Graph10
 st.header('Treemap: Laptop Companies, CPU, GPU, and Operating Systems')
 
-import plotly.express as px
+import matplotlib.pyplot as plt
 import pandas as pd
+import squarify  # For treemaps
+import streamlit as st
 
-# Create the treemap, showing hierarchical relationships between Company, CPU, GPU, and Operating System
-fig = px.treemap(df,
-                 path=['Company', 'CPU_Company', 'GPU_Company', 'OpSys'],  # Hierarchical path
-                 values='Price (Euro)',  # Size of the rectangles based on Price
-                 color='Price (Euro)',  # Color of the rectangles based on Price
-                 hover_data=['Product'],  # Show product details on hover
-                 title="Treemap: Laptop Companies, CPU, GPU, and Operating Systems")
+# Load the CSV file
+df = pd.read_csv('laptop_price-dataset.csv')
 
-# Customize the layout
-fig.update_layout(margin=dict(t=50, l=25, r=25, b=25))
+# Prepare the data for treemap
+grouped_data = df.groupby(['Company', 'CPU_Company', 'GPU_Company', 'OpSys']).agg({'Price (Euro)': 'sum'}).reset_index()
+
+# Define sizes for the treemap
+sizes = grouped_data['Price (Euro)']
+labels = [f"{row['Company']}\n{row['CPU_Company']}\n{row['GPU_Company']}\n{row['OpSys']}" for index, row in grouped_data.iterrows()]
+
+# Plotting the treemap
+plt.figure(figsize=(10, 6))
+squarify.plot(sizes=sizes, label=labels, alpha=.8, color=plt.cm.viridis(sizes / max(sizes)))
+plt.title("Treemap: Laptop Companies, CPU, GPU, and Operating Systems")
+plt.axis('off')  # Turn off axis for a cleaner look
 st.pyplot(plt)
-# Clears the current figure
 plt.clf()
+
 
 
 st.write('This histogram shows the distribution of laptop prices.')
