@@ -281,7 +281,7 @@ import pandas as pd
 
 # Load your CSV file
 file_path = 'your_file_path.csv'  # Replace with your CSV file path
-df = pd.read_csv('laptop_price - dataset.csv')
+df = pd.read_csv('laptop_price-dataset.csv')
 
 # Create the treemap, showing hierarchical relationships between Company, CPU, GPU, and Operating System
 fig = px.treemap(df,
