@@ -208,7 +208,7 @@ import pandas as pd
 
 # Load the CSV file
 file_path = '/mnt/data/laptop_price-dataset.csv'
-laptop_data = pd.read_csv('laptop_price - dataset.csv')
+laptop_data = pd.read_csv('laptop_price-dataset.csv')
 
 # Convert Price (Euro) to numeric if necessary
 df['Price (Euro)'] = pd.to_numeric(df['Price (Euro)'], errors='coerce') # Use df instead of laptop_data
