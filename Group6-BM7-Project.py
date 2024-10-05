@@ -310,6 +310,17 @@ st.subheader('**1. Price Distribution:**')
 st.write('*   Laptops typically cost around €1134.97.')
 st.write('*   Range of prices:  At least: €174, Maximum: €6099, 25% of the total: €609, and 75% of the total: €1496.50')
 
-st.subheader('')
-st.write('')
-st.write('')
+st.subheader('**2. RAM Distribution and Relation to Price:**')
+st.write('*   RAM allocation: 48% of laptops have 8 GB, 4 GB: 28.8%, and 16 GB: 15.5%')
+st.write('*   Cost determined by RAM: At €3975, laptops with 64 GB of RAM are the most expensive on average. Laptops with 8 GB RAM often cost €1184, whilst laptops with 4 GB RAM typically cost €576.')
+
+st.subheader('**3. Company Distribution and Price:**')
+st.write('*   Leading brands: Dell: 22.8%, Lenovo: 22.7%, and HP: 21%')
+st.write('*   Cost according to brand: Razer laptops are the most expensive on average at €3346, while Apple laptops are more expensive on average at €1564. The average cost of an Acer laptop is less, at €633.')
+
+st.subheader('**4. Screen Size Distribution:**')
+st.write('*   Most laptop screens are between 14 and 15.6 inches in size, with an average of 15 inches. The range of screen sizes is 10.1 inches to 18.4 inches.')
+
+st.subheader('**5. Operating System Distribution and Price:**')
+st.write('*   OS allocation: With 82.2% of laptops, Windows 10 is widely used, No OS: 5.2%, and Linux: 4.5%')
+st.write('*   Cost according to OS: MacOS laptops are among the priciest, with an average cost of €1749.63. The average cost of a Windows 7 laptop is €1686.65. Chrome OS computers are less expensive, with an average price of €553.59.')
