@@ -24,6 +24,7 @@ st.header('------------------------------------------------------------')
 df.info
 
 st.header('------------------------------------------------------------')
+
 #Graph 1
 st.header('Bar Chart of Most Common CPU Types Used by Apple')
 
