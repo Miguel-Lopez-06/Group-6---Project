@@ -1,4 +1,4 @@
-This is Group 6's Group Project. Our members consists of:
+This is Group 6's Group Project. Our members consist of:
 
 Lu, Angel Michael - 2020100329  - AzareLu
 
