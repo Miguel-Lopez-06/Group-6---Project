@@ -240,6 +240,7 @@ st.write('This line chart compares the average price of laptops running differen
 st.write('**Observation:** Laptops that run on Android OS, Chrome OS, Linux, or have no operating system at all are significantly cheaper, while Windows laptops and MacBooks are more expensive. It is also notable that laptops that run on Windows 7 are more expensive than ones that run on Windows 10 and 10 S.')
 st.header('------------------------------------------------------------')
 
+
 #Graph9
 st.header('Area Chart: Average Laptop Price by Company')
 
