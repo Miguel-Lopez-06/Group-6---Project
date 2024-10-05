@@ -149,6 +149,32 @@ st.write('**Observation:** Higher-end laptops typically have larger screens (15+
 st.header('------------------------------------------------------------')
 
 #Graph6
+st.header('Bar Chart of Distribution of Laptop Types')
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the dataset
+file_path = 'laptop_price-dataset.csv'  # Replace with your file path in Google Colab
+laptop_data = pd.read_csv("laptop_price - dataset.csv")
+
+# Create a bar chart for the distribution of laptop types (TypeName)
+plt.figure(figsize=(10,6))
+laptop_data['TypeName'].value_counts().plot(kind='bar', color='orange', edgecolor='black')
+plt.title('Bar Chart of Distribution of Laptop Types')
+plt.xlabel('Laptop Type')
+plt.ylabel('Count')
+plt.xticks(rotation=45)
+plt.grid(True)
+st.pyplot(plt)
+# Clears the current figure
+plt.clf()
+
+st.write('This is a Bar graph of the distribution of laptop types.')
+st.write('**Observation:** In this graph, there are different laptop types namingly Notebook, Gaming, Ultrabook, Netbook, and other more. Notebook has a visible lead among all the laptop types in terms of distribution, as the distribution is around 700. Next is Gaming and Ultrabook laptops which have around 150-250 distribution. Workstation and Netbook had the two lowest distributions of laptops with less than 100. Notebook is one of the most famous types of laptops. Notebooks are lightweight and smaller which makes it portable and good for basic tasks like web browsing. Gaming laptops are designed to handle playing video games. It is also good for video editing because of the higher RAM and better GPU than other laptops.')
+st.header('------------------------------------------------------------')
+
+#Graph7
 st.header('Area Chart: Average Laptop Price by Company')
 
 
