@@ -175,6 +175,31 @@ st.write('**Observation:** In this graph, there are different laptop types namin
 st.header('------------------------------------------------------------')
 
 #Graph7
+st.header('Scatter Plot of RAM vs Price')
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the dataset
+file_path = 'laptop_price-dataset.csv'  # Replace with your file path in Google Colab
+laptop_data = pd.read_csv("laptop_price-dataset.csv")
+
+# Scatter plot: RAM vs Price
+plt.figure(figsize=(10,6))
+plt.scatter(laptop_data['RAM (GB)'], laptop_data['Price (Euro)'], color='green', alpha=0.6)
+plt.title('Scatter Plot of RAM vs Price')
+plt.xlabel('RAM (GB)')
+plt.ylabel('Price (Euro)')
+plt.grid(True)
+st.pyplot(plt)
+# Clears the current figure
+plt.clf()
+
+st.write('This is a scatter plot of RAM vs Price')
+st.write('**Observation:** The graph shows a positive correlation between the Price and RAM as the RAM increases the price of the laptop also increases. 32 GB RAM laptops are the most expensive out of the other RAM choices. One outlier is the 64 GB RAM laptop costs around 4,000 euros which is slightly cheaper than other 32 GB RAM laptops. The price of the laptop also varies based on the different components installed or features.')
+st.header('------------------------------------------------------------')
+
+#Graph8
 st.header('Area Chart: Average Laptop Price by Company')
 
 
