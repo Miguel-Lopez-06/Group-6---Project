@@ -202,7 +202,34 @@ st.header('------------------------------------------------------------')
 #Graph8
 st.header('Line Chart of Average Laptop Price by Operating System')
 
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
 
+# Load the CSV file
+file_path = '/mnt/data/laptop_price-dataset.csv'
+laptop_data = pd.read_csv('laptop_price - dataset.csv')
+
+# Convert Price (Euro) to numeric if necessary
+df['Price (Euro)'] = pd.to_numeric(df['Price (Euro)'], errors='coerce') # Use df instead of laptop_data
+
+# Drop rows with missing prices or operating system information
+df = df.dropna(subset=['Price (Euro)', 'OpSys']) # Use df instead of laptop_data
+
+# Line chart: Average laptop price by operating system
+def generate_line_chart_by_os(df):
+    avg_price_per_os = df.groupby('OpSys')['Price (Euro)'].mean().reset_index()
+
+    # Sort by price for better visualization
+    avg_price_per_os = avg_price_per_os.sort_values(by='Price (Euro)')
+
+    plt.figure(figsize=(10, 6))
+    sns.lineplot(x='OpSys', y='Price (Euro)', data=avg_price_per_os, marker='o', color='green')
+    plt.title('Line Chart of Average Laptop Price by Operating System')
+    plt.xlabel('Operating System')
+    plt.ylabel('Average Price (Euro)')
+    plt.grid(True)
+    plt.xticks(rotation=45)
 st.pyplot(plt)
 # Clears the current figure
 plt.clf()
