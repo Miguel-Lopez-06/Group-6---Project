@@ -300,9 +300,12 @@ st.pyplot(plt)
 plt.clf()
 
 
-st.write('The area chart illustrates the varied price tactics used by different laptop manufacturers. As a luxury tech brand, Apple places a premium price point on its products, but other firms target a wider market with a variety of products that range from high-end laptops to low-cost models.')
-st.write('**Observation:** When it comes to typical laptop pricing, Apple leads the competition by a wide margin. This is a reflection of Apple focus on the premium end of the market, where devices like the MacBook Pro and MacBook Air are renowned for their luxury construction, cutting-edge features, and devoted customer bases.')
+st.write('This is a Box Plot of Price Comparison of Asus, Lenovo, and Dell Laptops by CPU Company')
+st.write('**Observation:** Based on the box plot, Asus offers Intel and AMD laptops that are both in a similar price range. These laptops are priced 500 - 2000, however, Asus’ Intel laptops can be slightly pricier than their AMD laptops. It is also noted that they also offer some Intel laptops that are an outlier, being priced around 4000 euros. Dell mostly offers Intel-based laptops. These laptops are priced around 1000 - 3000 euros. Like Asus, they also have some outliers that are pricier, being above 3000 euros. It is to be noted that there aren’t any AMD-based laptops in the dataset. Lenovo also offers both Intel and AMD-based laptops. Their Intel laptops are more varied in price ranges and can be priced higher than their AMD laptops which are mostly below 1000 euros. In addition, their Intel laptops are priced around 1000 to 3000 euros with some going above the mentioned price range.')
 st.header('------------------------------------------------------------')
 
 #Conclusion
 st.header('Conclusion')
+st.subheader('')
+st.write('')
+st.write('')
