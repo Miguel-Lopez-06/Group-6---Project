@@ -214,21 +214,26 @@ df['Price (Euro)'] = pd.to_numeric(df['Price (Euro)'], errors='coerce')
 df = df.dropna(subset=['Price (Euro)', 'OpSys'])
 
 # Group the data by operating system and calculate the average price
-avg_price_per_os = df.groupby('OpSys')['Price (Euro)'].mean().sort_values(ascending=False)
+avg_price_per_os = df.groupby('OpSys')['Price (Euro)'].mean().reset_index()
 
-# Plot the Area Chart for Average Laptop Price by Operating System
+# Sort by price for better visualization
+avg_price_per_os = avg_price_per_os.sort_values(by='Price (Euro)')
+
+# Plot the Line Chart for Average Laptop Price by Operating System
 plt.figure(figsize=(10, 6))
-avg_price_per_os.plot(kind='area', color='skyblue', alpha=0.6)
-plt.title('Area Chart: Average Laptop Price by Operating System', fontsize=14)
-plt.xlabel('Operating System', fontsize=12)
-plt.ylabel('Average Price (Euro)', fontsize=12)
+sns.lineplot(x='OpSys', y='Price (Euro)', data=avg_price_per_os, marker='o', color='green')
+plt.title('Line Chart of Average Laptop Price by Operating System')
+plt.xlabel('Operating System')
+plt.ylabel('Average Price (Euro)')
 plt.grid(True)
+plt.xticks(rotation=45)
 
 # Display the plot using Streamlit
 st.pyplot(plt)
 
 # Clears the current figure
 plt.clf()
+
 
 
 st.write('This line chart compares the average price of laptops running different operating systems.')
