@@ -230,10 +230,10 @@ def generate_line_chart_by_os(df):
     plt.ylabel('Average Price (Euro)')
     plt.grid(True)
     plt.xticks(rotation=45)
+    generate_line_chart_by_os(df)
 st.pyplot(plt)
 # Clears the current figure
 plt.clf()
-
 
 st.write('This line chart compares the average price of laptops running different operating systems.')
 st.write('**Observation:** Laptops that run on Android OS, Chrome OS, Linux, or have no operating system at all are significantly cheaper, while Windows laptops and MacBooks are more expensive. It is also notable that laptops that run on Windows 7 are more expensive than ones that run on Windows 10 and 10 S.')
