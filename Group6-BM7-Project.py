@@ -241,36 +241,33 @@ st.write('**Observation:** Laptops that run on Android OS, Chrome OS, Linux, or 
 st.header('------------------------------------------------------------')
 
 
-
-#Graph10
-st.header('Area Chart: Average Laptop Price by Company')
+#Graph9
+st.header('Histogram of Distribution of Laptop Prices')
 
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 
 # Load the CSV file
-file_path = '/mnt/data/laptop_price-dataset.csv'
-laptop_data = pd.read_csv('laptop_price-dataset.csv')
+df = pd.read_csv('laptop_price - dataset.csv')
 
 # Convert Price (Euro) to numeric if necessary (in case it's read as string)
-df['Price (Euro)'] = pd.to_numeric(df['Price (Euro)'], errors='coerce') # Use df instead of laptop_data
+df['Price (Euro)'] = pd.to_numeric(df['Price (Euro)'], errors='coerce')
 
 # Drop rows with missing prices (if any)
-df = df.dropna(subset=['Price (Euro)']) # Use df instead of laptop_data
+df = df.dropna(subset=['Price (Euro)'])
 
-# Histogram: Distribution of laptop prices
-def generate_histogram(df):
-    plt.figure(figsize=(10, 6))
-    sns.histplot(df['Price (Euro)'], bins=30, kde=True, color='skyblue')
-    plt.title('Histogram of Distribution of Laptop Prices')
-    plt.xlabel('Price (Euro)')
-    plt.ylabel('Frequency')
-    plt.grid(True)
+# Plot the Histogram for Distribution of Laptop Prices
+plt.figure(figsize=(10, 6))
+sns.histplot(df['Price (Euro)'], bins=30, kde=True, color='skyblue')
+plt.title('Histogram of Distribution of Laptop Prices')
+plt.xlabel('Price (Euro)')
+plt.ylabel('Frequency')
+plt.grid(True)
 st.pyplot(plt)
 # Clears the current figure
 plt.clf()
-generate_histogram(df)
+
 
 st.write('The area chart illustrates the varied price tactics used by different laptop manufacturers. As a luxury tech brand, Apple places a premium price point on its products, but other firms target a wider market with a variety of products that range from high-end laptops to low-cost models.')
 st.write('**Observation:** When it comes to typical laptop pricing, Apple leads the competition by a wide margin. This is a reflection of Apple focus on the premium end of the market, where devices like the MacBook Pro and MacBook Air are renowned for their luxury construction, cutting-edge features, and devoted customer bases.')
