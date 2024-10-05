@@ -232,7 +232,6 @@ def generate_line_chart_by_os(df):
     plt.xticks(rotation=45)
     
 st.pyplot(plt)
-generate_line_chart_by_os(df)
 # Clears the current figure
 plt.clf()
 
