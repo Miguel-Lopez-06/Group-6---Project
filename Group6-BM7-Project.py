@@ -200,15 +200,15 @@ st.write('**Observation:** The graph shows a positive correlation between the Pr
 st.header('------------------------------------------------------------')
 
 #Graph8
-st.header('Area Chart: Average Laptop Price by Company')
+st.header('Line Chart of Average Laptop Price by Operating System')
 
 
 st.pyplot(plt)
 # Clears the current figure
 plt.clf()
 
-st.write('The area chart illustrates the varied price tactics used by different laptop manufacturers. As a luxury tech brand, Apple places a premium price point on its products, but other firms target a wider market with a variety of products that range from high-end laptops to low-cost models.')
-st.write('**Observation:** When it comes to typical laptop pricing, Apple leads the competition by a wide margin. This is a reflection of Apple focus on the premium end of the market, where devices like the MacBook Pro and MacBook Air are renowned for their luxury construction, cutting-edge features, and devoted customer bases.')
+st.write('This line chart compares the average price of laptops running different operating systems.')
+st.write('**Observation:** Laptops that run on Android OS, Chrome OS, Linux, or have no operating system at all are significantly cheaper, while Windows laptops and MacBooks are more expensive. It is also notable that laptops that run on Windows 7 are more expensive than ones that run on Windows 10 and 10 S.')
 st.header('------------------------------------------------------------')
 
 #Graph9
