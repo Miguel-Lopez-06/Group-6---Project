@@ -122,6 +122,33 @@ st.write('**Observation:** When it comes to typical laptop pricing, Apple leads 
 st.header('------------------------------------------------------------')
 
 #Graph5
+st.header('3D Surface Plot: Screen Size, Weight, and Price')
+
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+# 3D Surface Plot: Screen Size, Weight, and Price
+fig = plt.figure(figsize=(10, 11))
+ax = fig.add_subplot(111, projection='3d')
+
+X = df['Inches']
+Y = df['Weight (kg)']
+Z = df['Price (Euro)']
+ax.plot_trisurf(X, Y, Z, cmap='viridis', edgecolor='none')
+
+ax.set_title('3D Surface Plot: Screen Size, Weight, and Price', fontsize=14)
+ax.set_xlabel('Screen Size (Inches)', fontsize=10)
+ax.set_ylabel('Weight (kg)', fontsize=10)
+ax.set_zlabel('Price (Euro)', fontsize=10)
+st.pyplot(plt)
+# Clears the current figure
+plt.clf()
+
+st.write('The 3D surface plot shows that weight and screen size are reliable indicators of cost. Generally speaking, larger, heavier laptops have more powerful hardware, which drives up the price. On the other hand, portability is a common goal of lighter, smaller laptops, the cost of which varies based on the brand and internal parts.')
+st.write('**Observation:** Higher-end laptops typically have larger screens (15+ inches) and weigh more (2+ kg). This implies that more expensive parts, such sharper screens, potent GPUs, and premium materials, are frequently found in larger laptops.')
+st.header('------------------------------------------------------------')
+
+#Graph6
 st.header('Area Chart: Average Laptop Price by Company')
 
 
