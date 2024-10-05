@@ -275,38 +275,26 @@ st.write('**Observation:** Most laptops are in the 500 - 1,000 euro price point,
 st.header('------------------------------------------------------------')
 
 #Graph10
-st.header('Treemap: Laptop Companies, CPU, GPU, and Operating Systems')
-
-import matplotlib.pyplot as plt
-import pandas as pd
-import squarify  # For treemaps
-import streamlit as st
-
-# Prepare the data for treemap
-grouped_data = df.groupby(['Company', 'CPU_Company', 'GPU_Company', 'OpSys']).agg({'Price (Euro)': 'sum'}).reset_index()
-
-# Define sizes for the treemap
-sizes = grouped_data['Price (Euro)']
-labels = [f"{row['Company']}\n{row['CPU_Company']}\n{row['GPU_Company']}\n{row['OpSys']}" for index, row in grouped_data.iterrows()]
-
-# Plotting the treemap
-plt.figure(figsize=(10, 6))
-squarify.plot(sizes=sizes, label=labels, alpha=.8, color=plt.cm.viridis(sizes / max(sizes)))
-plt.title("Treemap: Laptop Companies, CPU, GPU, and Operating Systems")
-plt.axis('off')  # Turn off axis for a cleaner look
-st.pyplot(plt)
-plt.clf()
-
-
-
-st.write('This histogram shows the distribution of laptop prices.')
-st.write('**Observation:** Most laptops are in the 500 - 1,000 euro price point, with only some high-end laptops in the 1,500 - 3,000 euro range, and only a miniscule amount costing 3,000 euros upward.')
-st.header('------------------------------------------------------------')
-
-#Graph11
 st.header('Box Plot: Price Comparison of Asus, Lenovo, and Dell Laptops by CPU Company')
 
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 
+# Load the CSV file
+file_path = '/mnt/data/laptop_price-dataset.csv'
+laptop_data = pd.read_csv('laptop_price-dataset.csv')
+
+# Filter the dataset to focus only on Asus, Lenovo, and Dell
+filtered_data = laptop_data[laptop_data['Company'].isin(['Asus', 'Lenovo', 'Dell'])]
+
+# Create the boxplot with three variables (Company, CPU Company, and Price)
+plt.figure(figsize=(12, 6))
+sns.boxplot(data=filtered_data, x='Company', y='Price (Euro)', hue='CPU_Company', palette='Set3')
+
+# Set plot title and labels
+plt.title('Box Plot: Price Comparison of Asus, Lenovo, and Dell Laptops by CPU Company')
+plt.xticks(rotation=45)
 st.pyplot(plt)
 # Clears the current figure
 plt.clf()
