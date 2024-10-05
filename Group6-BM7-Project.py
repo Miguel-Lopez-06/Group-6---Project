@@ -156,7 +156,7 @@ import matplotlib.pyplot as plt
 
 # Load the dataset
 file_path = 'laptop_price-dataset.csv'  # Replace with your file path in Google Colab
-laptop_data = pd.read_csv("laptop_price-dataset.csv")
+laptop_data = pd.read_csv("laptop_price- dataset.csv")
 
 # Create a bar chart for the distribution of laptop types (TypeName)
 plt.figure(figsize=(10,6))
