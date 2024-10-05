@@ -249,7 +249,7 @@ import seaborn as sns
 import pandas as pd
 
 # Load the CSV file
-df = pd.read_csv('laptop_price - dataset.csv')
+df = pd.read_csv('laptop_price-dataset.csv')
 
 # Convert Price (Euro) to numeric if necessary (in case it's read as string)
 df['Price (Euro)'] = pd.to_numeric(df['Price (Euro)'], errors='coerce')
