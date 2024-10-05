@@ -208,13 +208,13 @@ import pandas as pd
 
 # Load the CSV file
 file_path = '/mnt/data/laptop_price-dataset.csv'
-laptop_data = pd.read_csv('laptop_price-dataset.csv')
+df = pd.read_csv('laptop_price-dataset.csv')
 
 # Convert Price (Euro) to numeric if necessary
-df['Price (Euro)'] = pd.to_numeric(df['Price (Euro)'], errors='coerce') # Use df instead of laptop_data
+df['Price (Euro)'] = pd.to_numeric(df['Price (Euro)'], errors='coerce')
 
 # Drop rows with missing prices or operating system information
-df = df.dropna(subset=['Price (Euro)', 'OpSys']) # Use df instead of laptop_data
+df = df.dropna(subset=['Price (Euro)', 'OpSys'])
 
 # Line chart: Average laptop price by operating system
 def generate_line_chart_by_os(df):
@@ -231,10 +231,11 @@ def generate_line_chart_by_os(df):
     plt.grid(True)
     plt.xticks(rotation=45)
     
-st.pyplot(plt)
-# Clears the current figure
-plt.clf()
+    plt.show()  # Display the chart
+    plt.clf()  # Clear the current figure for the next plot
+
 generate_line_chart_by_os(df)
+
 
 st.write('This line chart compares the average price of laptops running different operating systems.')
 st.write('**Observation:** Laptops that run on Android OS, Chrome OS, Linux, or have no operating system at all are significantly cheaper, while Windows laptops and MacBooks are more expensive. It is also notable that laptops that run on Windows 7 are more expensive than ones that run on Windows 10 and 10 S.')
