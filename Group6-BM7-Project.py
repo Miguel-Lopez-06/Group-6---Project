@@ -281,9 +281,6 @@ import pandas as pd
 import squarify  # For treemaps
 import streamlit as st
 
-# Load the CSV file
-df = pd.read_csv('laptop_price-dataset.csv')
-
 # Prepare the data for treemap
 grouped_data = df.groupby(['Company', 'CPU_Company', 'GPU_Company', 'OpSys']).agg({'Price (Euro)': 'sum'}).reset_index()
 
