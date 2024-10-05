@@ -306,6 +306,10 @@ st.header('------------------------------------------------------------')
 
 #Conclusion
 st.header('Conclusion')
+st.subheader('**1. Price Distribution:**')
+st.write('*   Laptops typically cost around €1134.97.')
+st.write('*   Range of prices:  At least: €174, Maximum: €6099, 25% of the total: €609, and 75% of the total: €1496.50')
+
 st.subheader('')
 st.write('')
 st.write('')
