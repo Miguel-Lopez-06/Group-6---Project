@@ -304,23 +304,33 @@ st.write('This is a Box Plot of Price Comparison of Asus, Lenovo, and Dell Lapto
 st.write('**Observation:** Based on the box plot, Asus offers Intel and AMD laptops that are both in a similar price range. These laptops are priced 500 - 2000, however, Asus’ Intel laptops can be slightly pricier than their AMD laptops. It is also noted that they also offer some Intel laptops that are an outlier, being priced around 4000 euros. Dell mostly offers Intel-based laptops. These laptops are priced around 1000 - 3000 euros. Like Asus, they also have some outliers that are pricier, being above 3000 euros. It is to be noted that there aren’t any AMD-based laptops in the dataset. Lenovo also offers both Intel and AMD-based laptops. Their Intel laptops are more varied in price ranges and can be priced higher than their AMD laptops which are mostly below 1000 euros. In addition, their Intel laptops are priced around 1000 to 3000 euros with some going above the mentioned price range.')
 st.header('------------------------------------------------------------')
 
-#Conclusion
 st.header('Conclusion')
 st.subheader('**1. Price Distribution:**')
 st.write('*   Laptops typically cost around €1134.97.')
-st.write('*   Range of prices:  At least: €174, Maximum: €6099, 25% of the total: €609, and 75% of the total: €1496.50')
+st.write('*   Range of prices: At least: €174, Maximum: €6099, '
+          '25% of the total: €609, and 75% of the total: €1496.50')
 
 st.subheader('**2. RAM Distribution and Relation to Price:**')
-st.write('*   RAM allocation: 48% of laptops have 8 GB, 4 GB: 28.8%, and 16 GB: 15.5%')
-st.write('*   Cost determined by RAM: At €3975, laptops with 64 GB of RAM are the most expensive on average. Laptops with 8 GB RAM often cost €1184, whilst laptops with 4 GB RAM typically cost €576.')
+st.write('*   RAM allocation: 48% of laptops have 8 GB, '
+          '4 GB: 28.8%, and 16 GB: 15.5%')
+st.write('*   Cost determined by RAM: At €3975, laptops with 64 GB '
+          'of RAM are the most expensive on average. Laptops with 8 GB RAM '
+          'often cost €1184, whilst laptops with 4 GB RAM typically cost €576.')
 
 st.subheader('**3. Company Distribution and Price:**')
 st.write('*   Leading brands: Dell: 22.8%, Lenovo: 22.7%, and HP: 21%')
-st.write('*   Cost according to brand: Razer laptops are the most expensive on average at €3346, while Apple laptops are more expensive on average at €1564. The average cost of an Acer laptop is less, at €633.')
+st.write('*   Cost according to brand: Razer laptops are the most expensive on average '
+          'at €3346, while Apple laptops are more expensive on average at €1564. '
+          'The average cost of an Acer laptop is less, at €633.')
 
 st.subheader('**4. Screen Size Distribution:**')
-st.write('*   Most laptop screens are between 14 and 15.6 inches in size, with an average of 15 inches. The range of screen sizes is 10.1 inches to 18.4 inches.')
+st.write('*   Most laptop screens are between 14 and 15.6 inches in size, '
+          'with an average of 15 inches. The range of screen sizes is 10.1 inches to 18.4 inches.')
 
 st.subheader('**5. Operating System Distribution and Price:**')
-st.write('*   OS allocation: With 82.2% of laptops, Windows 10 is widely used, No OS: 5.2%, and Linux: 4.5%')
-st.write('*   Cost according to OS: MacOS laptops are among the priciest, with an average cost of €1749.63. The average cost of a Windows 7 laptop is €1686.65. Chrome OS computers are less expensive, with an average price of €553.59.')
+st.write('*   OS allocation: With 82.2% of laptops, Windows 10 is widely used, '
+          'No OS: 5.2%, and Linux: 4.5%')
+st.write('*   Cost according to OS: MacOS laptops are among the priciest, '
+          'with an average cost of €1749.63. The average cost of a Windows 7 laptop '
+          'is €1686.65. Chrome OS computers are less expensive, with an average '
+          'price of €553.59.')
