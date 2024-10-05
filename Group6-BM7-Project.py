@@ -117,6 +117,6 @@ st.pyplot(plt)
 # Clears the current figure
 plt.clf()
 
-st.write('')
-st.write('**Observation:** ')
+st.write('The area chart illustrates the varied price tactics used by different laptop manufacturers. As a luxury tech brand, Apple places a premium price point on its products, but other firms target a wider market with a variety of products that range from high-end laptops to low-cost models.')
+st.write('**Observation:** When it comes to typical laptop pricing, Apple leads the competition by a wide margin. This is a reflection of Apple focus on the premium end of the market, where devices like the MacBook Pro and MacBook Air are renowned for their luxury construction, cutting-edge features, and devoted customer bases.')
 st.header('------------------------------------------------------------')
