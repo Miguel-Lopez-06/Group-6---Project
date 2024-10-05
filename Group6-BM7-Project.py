@@ -279,14 +279,10 @@ st.header('Treemap: Laptop Companies, CPU, GPU, and Operating Systems')
 import plotly.express as px
 import pandas as pd
 
-# Load your CSV file
-file_path = 'your_file_path.csv'  # Replace with your CSV file path
-df = pd.read_csv('laptop_price-dataset.csv')
-
 # Create the treemap, showing hierarchical relationships between Company, CPU, GPU, and Operating System
 fig = px.treemap(df,
                  path=['Company', 'CPU_Company', 'GPU_Company', 'OpSys'],  # Hierarchical path
-                 values='Price (Euro)',  # Size of the rectangles can be based on Price or other metrics
+                 values='Price (Euro)',  # Size of the rectangles based on Price
                  color='Price (Euro)',  # Color of the rectangles based on Price
                  hover_data=['Product'],  # Show product details on hover
                  title="Treemap: Laptop Companies, CPU, GPU, and Operating Systems")
